@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 >Inheritance and Prototype</h1>
+    <hr>
+
+    <h3>Q1: Create 2 objects - parent and child. Attach methods to parent and use those methods in child object using parents prototype</h3>
+    <pre>
+Ans:
+    const objectCreat = {
+        funame: function () {
+        console.log(`${this.name}, ${this.age},`);
+        },
+    };
+    
+    const obj1 = Object.create(objectCreat);
+    obj1.name = 'Rushi';
+    obj1.age = 23;
+    obj1.funame();
+    
+    const obj2 = Object.create(objectCreat);
+    obj1.name = 'Ravi Kumar Yadav';
+    obj1.age = 50;
+    obj1.funame();
+    </pre>
+
+
+    <h3>Q3: Add a method to calculate sum of all elements in Array in array's protype, use that method to calculate sum for multiple arrays</h3>
+    <pre>
+Ans:
+    const ArraySum = {
+        Sum: function (arr) {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+        console.log('sum: ', sum);
+        }
+    };
+    
+    ArraySum.Sum([1,2,3,4,5,6,7,8,9]);
+    </pre>
+
+    <h3>Q4: Write a JavaScript function to retrieve all the names of object's own and inherited properties.</h3>
+    <pre>
+Ans:
+    const objectCreat = {
+        funame: function () {
+        console.log(`${this.name}, ${this.age},`);
+        },
+    };
+    
+    const obj2 = Object.create(objectCreat);
+    obj1.name = 'Ravi Kumar Yadav';
+    obj1.age = 50;
+    obj1.funame();
+
+    console.log(Object.getOwnPropertyNames(obj2));
+
+</pre>
+    <script src="script.js"></script>
+</body>
+</html>
